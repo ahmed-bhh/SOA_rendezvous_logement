@@ -19,15 +19,17 @@ import javax.ws.rs.core.Response;
 public class LogementResources {
 LogementBusiness LB=new LogementBusiness();
 @GET
+@Path("getAll")
+
 @Produces(MediaType.APPLICATION_JSON)
 	public Response GetAll()
 	{
-		
+
 		if(LB.getLogements()!=null)
 			return Response.status(Response.Status.OK).entity(LB.getLogements()).build();
-		
-		else 
-			
+
+		else
+
 			return Response.status(Response.Status.NOT_FOUND).entity("liste vide" ).build();
 	}
 	
