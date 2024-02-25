@@ -5,6 +5,7 @@ import java.util.List;
 
 import com.esprit.entities.Logement;
 import com.esprit.entities.Logement.Type;
+import com.esprit.entities.RendezVous;
 
 
 public class LogementBusiness {
@@ -72,6 +73,15 @@ public class LogementBusiness {
 				liste.add(l);
 		}
 		return liste;
+	}
+
+	public Logement getlogementVousById(int id){
+		Logement rendezVous=null;
+		for(Logement r:logements){
+			if(r.getReference()==id)
+				rendezVous=r;
+		}
+		return rendezVous;
 	}
 	
 
