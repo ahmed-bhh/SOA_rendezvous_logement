@@ -48,7 +48,16 @@ public class LogementResources {
 		}
 		return Response.status(Response.Status.NOT_FOUND).entity("echec not found").build();
 	}
-	
+
+	@Path("update/{id}")
+	@PUT
+	@Consumes(MediaType.APPLICATION_JSON)
+	public Response updateRdv(@PathParam(value = "id") int id , Logement R){
+		if(LB.updatelogement(id,R)){
+			return Response.status(Response.Status.OK).entity("logement modifier").header("Access-Control-Allow-Origin","*").build();
+		}
+		return Response.status(Response.Status.NOT_FOUND).entity("error update").build();
+	}
 	
 	
 	

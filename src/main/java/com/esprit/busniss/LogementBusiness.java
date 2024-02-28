@@ -97,6 +97,22 @@ public class LogementBusiness {
 		return false;
 	}
 
+
+
+	public boolean updatelogement(int idlogement, Logement logement){
+		for(Logement r:logements){
+			if(r.getReference()==idlogement){
+				int index=logements.indexOf(logement);
+				//Logement logement=logementMetier.getLogementsByReference(rendezVous.getLogement().getReference());
+				//if(logement!=null){
+					logements.set(index, logement);
+					return true;
+				//}
+			}
+		}
+		return false;
+	}
+
 	
 	
 
