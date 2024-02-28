@@ -1,6 +1,7 @@
 package com.esprit.busniss;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 import com.esprit.entities.Logement;
@@ -83,6 +84,20 @@ public class LogementBusiness {
 		}
 		return rendezVous;
 	}
+
+	public boolean deletelogement(int id){
+		Iterator<Logement> iterator=logements.iterator();
+		while(iterator.hasNext()){
+			Logement r=iterator.next();
+			if(r.getReference()==id){
+				iterator.remove();
+				return true;
+			}
+		}
+		return false;
+	}
+
+	
 	
 
 }
