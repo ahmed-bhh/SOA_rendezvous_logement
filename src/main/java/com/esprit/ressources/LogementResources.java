@@ -58,8 +58,16 @@ public class LogementResources {
 		}
 		return Response.status(Response.Status.NOT_FOUND).entity("error update").build();
 	}
-	
-	
+
+	@POST
+	@Path("add")
+	@Consumes(MediaType.APPLICATION_JSON)
+	public Response ajoutlogement(Logement R){
+		if(LB.addlogement(R)){
+			return  Response.status(Response.Status.CREATED).entity("add success").header("Access-Control-Allow-Origin","*").build();
+		}
+		return Response.status(Response.Status.NOT_FOUND).entity(LB.getLogements()).build();
+	}
 	
 	
 	

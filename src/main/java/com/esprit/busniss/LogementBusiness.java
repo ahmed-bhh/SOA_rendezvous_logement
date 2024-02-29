@@ -113,7 +113,10 @@ public class LogementBusiness {
 		return false;
 	}
 
-	
-	
+
+	public boolean addlogement(Logement logement){
+
+			return logements.add(logement);//}
+	}
 
 }
